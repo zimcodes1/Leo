@@ -1,0 +1,119 @@
+.container{
+    overflow: scroll;
+}
+/* For devices above 900px */
+
+@media screen and (max-width: 1400px) {
+    .col{
+        width: 35%;
+    }
+    .right{
+        background: none;
+        width: 55%;
+    }
+    .input-box{
+        height: 50px;
+    }
+    .col h1{
+        font-size: large;
+    }
+    .col .log{
+        margin-top: 0;
+    }
+}
+
+
+
+/*************devices 900px or less*************/
+@media screen and (max-width: 900px) {
+    .col h1{
+        font-size: large;
+    }
+    .col p{
+        font-size: small;
+        margin-top: 5%;
+    }
+    .input-box{
+        margin-top: 2%;
+    }
+    .prompt p{
+        font-size: small;
+    }
+    .info{
+        display: block;
+    }
+    .go{
+        margin-top: 2%;
+    }
+        .col{
+        padding-top: auto;
+        width: 45%;
+    }
+        .box{
+        background: none;
+    }
+    .container{
+        border: none;
+        border-radius: 0;
+        margin: 0;
+        width: 100%;
+        top: 0;
+        left: 0;
+        height: 100dvh;
+    }
+    .input-box{
+        margin-top: 10%;
+    }
+
+}
+
+
+/**************Responsiveness for devices less than 600px in width****************/
+
+@media screen and (max-width: 600px) {
+    .quick-prompts{
+        margin-top: 12%;
+    }
+    .prompt{
+        height: 45px;
+    }
+    .sign{
+        height: 45px;
+        margin-top: 2%;
+    }
+        .col button{
+        display: block;
+        width: 60%;
+        margin: 2% 0 2% 5%;
+        height: 45px;
+        color: rgb(0, 211, 123);
+        background: white;
+        border: none;
+        border-radius: 20px;
+        margin: 3% 0 0 20%;
+        font-family: Mont;
+        font-size: large;
+    }
+    .col .log{
+        margin-top: 30%;
+    }
+    .box{
+        overflow: scroll;
+    }
+       .col{
+        display: block;
+        width: 90%;
+        margin: 2% 0 2% 5%;
+        height: 96%;
+        padding: 0 5% 0 5%;
+    }
+    .input-box{
+        margin-top: 8%;
+        height: 45px;
+    }
+    .input-box input{
+        height: 100%;
+    }
+
+
+}

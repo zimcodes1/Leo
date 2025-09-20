@@ -1,0 +1,624 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@font-face {
+    font-family: "Head";
+    src: url(../fonts/Cocogoose-Pro-Bold-trial.ttf);
+}
+@font-face {
+    font-family: Para;
+    src: url(../fonts/Ubuntu-Regular.ttf);
+}
+
+@font-face {
+    font-family: Mont;
+    src: url(../fonts/Mont-HeavyDEMO.otf);
+}
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes dropdown {
+    0%{
+        height: 10%;
+    }
+    50%{
+        height: 25%;
+    }
+    100%{
+        height: 40%;
+    }
+}
+@keyframes dropup {
+    0%{
+        height: 40%;
+    }
+    50%{
+        height: 25%;
+    }
+    100%{
+        height: 10%;
+    }
+}
+::-webkit-scrollbar{
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+.box{
+    height: 100dvh;
+}
+a{
+    text-decoration: none;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    background: #212121;
+    display: inline-block;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    box-shadow: 0 0 7px rgb(41, 41, 41);
+    position: fixed;
+}
+.col{
+    display: inline-block;
+    width: 45%;
+    margin-left: 3%;
+    height: 90%;
+    margin-top: 2.5%;
+    background: #313131a4;
+    border-radius: 40px;
+    overflow: hidden;
+    padding: 0 10px 0 10px;
+}
+.col .log{
+    width: 30%;
+    height: auto;
+    display: block;
+    margin: 5% 0 0 33.33%;
+    animation: rotate 3s ease-in-out none infinite;
+    transition: 0.3s;
+}
+
+.col h1{
+    display: block;
+    font-family: Head;
+    display: block;
+    text-align: center;
+    color: whitesmoke;
+}
+name{
+    color: rgb(0, 211, 123);
+}
+.col p{
+    color: #c9c9c9;
+    font-family: para;
+    text-align: center;
+    margin: 1% 0 0 0;
+
+}
+.input-box{
+    display: flex;
+    width: 80%;
+    height: 40px;
+    margin: 5% 0 0 10%;
+    background: #c9c9c92a;
+    border-radius: 40px;
+    border: solid 2px rgb(0, 211, 123);
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px 0 0;
+} 
+.input-box input{
+    width: 90%;
+    height: 100%;
+    border-radius: 40px 0 0 40px;
+    border: none;
+    background: none;
+    padding: 0 0 0 10px;
+    color: #ffffff;
+    font-family: para;
+    display: inline-block;
+}
+.input-box img{
+    width: auto;
+    height: 20px;
+    display: inline-block;
+    transition: 0.3s;
+}
+.input-box img:hover{
+    transform: scale(1.2);
+}
+.quick-prompts{
+    width: 90%;
+    height: 65%;
+    margin: 5% 0 0 5%;
+    border-radius:40px;
+    padding: 2% 0 0 0;
+}
+.quick-prompts .prompt{
+    display: inline-block;
+    width: 95%;
+    margin: 2% 0 0 2.5%;
+    background: rgba(102, 102, 102, 0.1);
+    border-radius: 20px;
+    transition: 0.3s;
+    padding: 2% 5px 2% 8px;
+}
+
+.prompt p{
+    font-size: small;
+    display: inline;
+}
+.quick-prompts .prompt:hover{
+    background: rgba(177, 177, 177, 0.2);
+}
+.prompt i{
+    color: #fff;
+    display: flex;
+    padding: 0;
+    position: relative;
+    margin: 0;
+    float: right;
+    padding: 0 5px 0 0;
+}
+.col .info{
+    margin-top: 0;
+    font-size: small;
+    font-family: para;
+}
+
+.sign{
+    overflow: hidden;
+    width: 80%;
+    background: #ffffff;
+    margin: 1% 0 0 10%;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    padding: 1% 0 1% 0;
+}
+.sign span{
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    overflow: hidden;
+    background: none;
+    border: 0;
+}
+.sign img{
+    display: inline-block;
+    width: 100%;
+    transform: scale(1.2);
+}
+.med{
+    background: rgb(0, 211, 123);
+}
+.sign h1{
+    font-family: Mont;
+    display: inline-block;
+    color: #333333;
+    font-size: medium;
+    margin-top: 5px;
+}
+.med h1{
+    color: #ffffff;
+}
+.sign:hover{
+    box-shadow: 0 0 5px #c5c5c5c0;
+}
+.leobar{
+    position: absolute;
+    top: 0;
+    height: 50px;
+    width: 100%;
+    background: #212121;
+    display: flex;
+    border-bottom: solid 1px #333;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px 0 40px;
+    z-index: 10;
+
+}
+.small{
+    width: 25%;
+    background: #212121;
+    border-radius: 0;
+    margin: 50px 0 0 0;
+    overflow: scroll;
+}
+.large{
+    width: 74%;
+    margin: 50px 0 0 0%;
+    border-radius: 0;
+    background: none;
+    padding: 0;
+}
+.ch{
+    overflow: hidden;
+    background: #292929;
+}
+.name{
+    margin:  0;
+    padding: 5px;
+    border-radius: 10px;
+    border: solid 1px #33333394;
+    cursor: pointer;
+
+}
+.name h1{
+    font-size: medium;
+    font-family: head;
+    color: rgb(0, 211, 123);
+}
+.name img{
+    width: 30px;
+    height: auto;
+}
+.name .it{
+    font-family: Para;
+    font-size: small;
+    margin: 0;
+    padding: 7px 5px 0 5px;
+}
+
+.leobar .tx{
+    transition: 0.3s;
+    margin-bottom: 2px;
+}
+.tx h1{
+    color: #fff;
+}
+.tx:hover{
+    background: #414141;
+}
+.leobar .ava{
+    display: inline-flex;
+    width: 35px;
+    height: 35px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: .7% 0 0 4%;
+}
+.leobar .ava img{
+    width: 100%;
+    height: auto;
+    transition: 0.3s;
+}
+.leobar .ava img:hover{
+    transform: scale(1.2);
+}
+.small .title{
+    font-family: mont;
+    font-size: large;
+    position: relative;
+    background: inherit;
+    display: block;
+    margin-top: 3%;
+}
+.chats{
+    width: 90%;
+    margin-top: 8px;
+    border-radius: 20px;
+    height: 10%;
+    background: none;
+    margin-left: 5%;
+    overflow: scroll;
+    background: #1f1f1f;
+}
+.search{
+    position: absolute;
+    width: 340px;
+    height: 10%;
+    bottom: 0;
+    display: flex;
+    z-index: 2;
+}
+.sec{
+    display: inline-block;
+    width: 80%;
+    height: 30px;
+    background: none;
+    border-bottom: solid 3px #e0e0e0;
+    margin-left: 25px;
+}
+.sec input{
+    width: 90%;
+    height: 100%;
+    border-radius: 10px;
+    background: none;
+    border: none;
+    color: #e0e0e0;
+    padding-left: 5px;
+}
+.sec i{
+    color:rgb(0, 211, 123);
+}
+.small .option{
+    width: 90%;
+    height: 40px;
+    background: #292929bd;
+    margin: 4px  0 0 5%;
+    border-radius: 7px;
+    display: flex;
+    transition: 0.3s;
+}
+.small .option h1{
+    font-size: medium;
+    font-family: para;
+    margin: 4% 0 0 4%;
+}
+.small .option:hover{
+    background: #3d3d3dbd;
+}
+
+.option .ava{
+    overflow: hidden;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+}
+.small .option i img{
+    width: 30px;
+}
+.chats ul{
+    margin: 4px 0 0 20px;
+}
+.chats ul i{
+    color: #ffffff;
+    float: right;
+    padding: 1px 10px 4px 4px;
+    cursor: pointer;
+}
+.chats ul li{
+    color: #f5f5f5;
+    font-family: Object;
+    font-size: small;
+    margin-top: 5%;
+}
+.chatinp{
+    display: inline-block;
+    position: absolute;
+    bottom: 0px;
+    background: #212121;
+    margin: 0;
+    right: 0;
+    z-index: 1;
+    border-top: solid 1px #333;
+}
+.chatbox{
+    font-size: x-large;
+}
+.chatinp i img{
+    width: 30px;
+    height: auto;
+}
+.chatinp i:hover{
+    transform: scale(1.1);
+}
+
+
+.option .fa-arrow-down{
+    color: #fff;
+    padding: 10px;
+    margin-left: 45%;
+}
+.small .last{
+    margin-bottom: 70px;
+}
+#dropup{
+    display: none;
+}
+.last h1{
+    color: #ff0000;
+}
+.msgbox{
+    background: none;
+    width: 100%;
+    height: auto;
+    overflow: scroll;
+    padding-bottom: 150px;
+    margin-top: 0;
+}
+.nomsg, #msgpresent{
+    width: 75%;
+    height: 100%;
+    overflow: scroll;
+    margin-left: 12.5%;
+}
+.logo{
+    width: 25%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 38%;
+    margin-top: 3%;
+    animation: rotate 3s ease-in-out infinite;
+}
+.logo img{
+    width: 100%;
+    height: auto;
+}
+.wel{
+    width: 100%;
+    text-align: center;
+    font-size: small;
+    margin-top: 2%;
+}
+.wel h1{
+    font-family: Mont;
+}
+
+.msgdiv{
+    display: block;
+    width: 90%;
+    height: auto;
+    margin: 1% 0 0 5%;
+    overflow: auto;
+}
+.aimsg, .msg{
+    display: inline-block;
+    padding: 5px 10px;
+    max-width: 45%;
+    margin-top: 2.5px;
+    border-radius: 20px;
+    background: #4e4e4e;
+}
+.msg p, .aimsg p{
+    color: #f3f3f3;
+    font-family: para;
+    font-size: small;
+}
+.msg{
+    float: right;
+}
+.msgimg{
+    width: 95%;
+    height: auto;
+    margin: 2% 0 2% 2.5%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.msgimg img{
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+#data ul {
+    margin-left: 8%;
+    margin-top: 2%;
+}
+#data h1{
+    font-size: x-large
+}
+#data ul li h1{
+    display: inline;
+    font-size: medium;
+    margin: 0;
+    font-family: franca;
+}
+#data p{
+    margin-top: 1%;
+    text-align: center;
+}
+#data ul li p{
+    margin: 0;
+    text-align: left;
+    font-family: rene;
+    font-size: small;
+}
+#data ul li .allow{
+    padding: 3px;
+    background: #494949b7;
+    border-radius: 5px;
+    display: inline-block;
+    font-family: Mont;
+    color: #dbdbdb;
+    transition: 0.3s;
+}
+#data ul li .allow:hover{
+    background: #494949;
+}
+#data ul li .allow input{
+    accent-color: rgb(3, 207, 95);
+}
+.over{
+    overflow: scroll;
+    padding-bottom: 10px;
+}
+.col button{
+    display: none;
+}
+#msg{
+    font-family: para;
+}
+#nav-toggle{
+    padding: 2px;
+    border: none;
+    margin: 0;
+}
+
+
+
+
+/****************I had to redo the chat input box *********************/
+    .chatinp{
+        background: #404040;
+        border-top: solid 1px #333;
+        height: 60px;
+        width: 55%;
+        margin: 0;
+        bottom: 20px;
+        left: 10%;
+        border-radius: 40px;
+        padding: 0 10px 0 10px;
+    }
+       .chatbox{
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+    }
+    .chatinp i{
+        margin: 0;
+        padding: 3px;
+        border-radius: 20px;
+        transition: 0.2s;
+        color: #b6b6b6;
+
+    }
+    .chatinp i:hover{
+        background: #525252;
+        cursor: pointer;
+    }
+    .chatinp input{
+        background: none;
+        border: none;
+        outline: none;
+        color: white;
+        width: 100%;
+        padding: 4px;
+        height: 100%;
+    }
+    .search{
+        display: none;
+    }
+        .input-bg {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        height: 80px;
+        padding: 0;
+        background: #292929;
+    }
+    .small{
+        height: 100%;
+    }
+#msgpresent{
+    display: none;
+}

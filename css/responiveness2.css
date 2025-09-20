@@ -1,0 +1,309 @@
+    @media screen and (max-width: 900px) {
+        .container{
+            width: 100%;
+            height: 100dvh;
+            border: none;
+            border-radius: 0;
+            margin: 0;
+            top: 0;
+            left: 0;
+        }
+        .leobar .tx h1{
+            font-size: small;
+        }
+        .small .title{
+            font-size: 0;
+        }
+        .leobar {
+            padding: 0 10px 0 20px;
+            z-index: 3;
+        }
+        .small{
+            width: 10%;
+            height: 100%;
+        }
+        .large{
+            width: 85%;
+            margin: 0;
+        }
+        .small .option h1 in{
+            display: none;
+        }
+        .small .option h1{
+            font-size: large;
+        }
+        .small .option{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: none;
+        }
+        .chats, .title{
+            display: none;
+        }
+        .input-bg {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        height: 63px;
+        padding: 0;
+        background: #292929;
+    }
+    .chatinp{
+        background: #404040;
+        border-top: solid 1px #333;
+        height: 55px;
+        width: 85%;
+        margin: 0;
+        bottom: 10px;
+        left: 2%;
+        border-radius: 40px;
+        padding: 0 10px 0 10px;
+    }
+       .chatbox{
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+    }
+    .chatinp i{
+        margin: 0;
+        padding: 3px;
+        border-radius: 20px;
+        transition: 0.2s;
+        transform: scale(1);
+    }
+    .chatinp i:hover{
+        background: #525252;
+        cursor: pointer;
+    }
+    .chatinp input{
+        background: none;
+        border: none;
+        outline: none;
+        color: white;
+        width: 100%;
+        padding: 4px;
+        height: 100%;
+    }
+    .search{
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .box{
+        background: none;
+        padding: 0;
+        margin: 0;
+    }
+    .container{
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        margin: 0 0 0 0;
+        left: 0;
+        top: 0;
+    }
+    .leobar{
+        height: 60px;
+        padding: 0 5px 0 5px;
+        justify-content: space-between;
+        align-items: center;
+        background: #212121;
+        border-bottom: solid 1px #333;
+    }
+    .r{
+        display: none;
+    }
+    .name{
+        margin: 0;
+        background: none;
+        padding: 0;
+        height: 40px;
+        background: none;
+    }
+    .name img{
+        height: 40px;
+        width: auto;
+        margin: 0%;
+        transition: 0.2s;
+    }
+    .name img:hover{
+        transform: rotate(360deg);
+    }
+    .name .it{
+        padding: 4px;
+        border-radius: 5px;
+        border: solid 1px #333;
+        font-size: medium;
+    }
+    .name .it:hover{
+        background: #333;
+        cursor: pointer;
+    }
+    .leobar .tx{
+        background: none;
+        margin: 0;
+    }
+    .leobar .ava{
+        width: 40px;
+        height: 40px;
+        margin-right: 2%;
+    }
+    .name .it{
+        text-align: center;
+        padding: 7% 4px 2px 4px;;
+    }
+    .small{
+        position: fixed;
+        top: 40px;
+        margin: 0;
+        width: 80%;
+        background: #212121;
+        z-index: 2;
+        height: 95%;
+        left: -80%;
+        transition: left 0.3s ease;
+    }
+    .small.active{
+        left: 0;
+    }
+    .chatinp{
+        background: #404040;
+        border-top: solid 1px #333;
+        height: 55px;
+        width: 95%;
+        margin: 0;
+        bottom: 10px;
+        left: 2.5%;
+        border-radius: 40px;
+        padding: 0 10px 0 10px;
+    }
+    .sec{
+        width: 90%;
+        margin-left: 10%;
+        border-bottom: solid 2px #333;
+    }
+    .large{
+        width: 100%;
+    }
+
+    #data ul{
+        margin-left: 3%;
+    }
+    .msgbox{
+        height: fit-content;
+        padding-bottom: 10%;
+        padding-top: 13%;
+    }
+    .chatbox{
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+    }
+    .chatinp i{
+        margin: 0;
+        padding: 5px;
+        border-radius: 20px;
+        transition: 0.2s;
+        transform: scale(1);
+        font-size: medium;
+    }
+    .chatinp i:hover{
+        background: #525252;
+        cursor: pointer;
+    }
+    .chatinp input{
+        background: none;
+        border: none;
+        outline: none;
+        color: white;
+        width: 100%;
+        padding: 4px;
+        height: 100%;
+    }
+    .suggestions{
+        margin-top: 10%;
+    }
+    #nav-toggle{
+        cursor: pointer;
+    }
+    .chats{
+        height: 25%;
+    }
+    #drop{
+        display: none;
+    }
+    .chats li{
+        padding: 8px 0 8px 5px;
+        list-style-type: none;
+        border-radius: 8px;
+        width: 95%;
+        margin: 0;
+        cursor: pointer;
+    }
+    .chats li:hover{
+        background: #3333338a;
+    }
+    #send{
+        height: 25px;
+        width: auto;
+        margin: 0;
+        padding: 5px 0 0 0;
+    }
+    .input-bg{
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        height: 63px;
+        padding: 0;
+        background: #292929;
+    }
+    #data{
+        padding-top: 3%;
+    }
+    .small{
+        top: 55px;
+    }
+    .small .option{
+        margin-left: 0;
+        justify-content: left;
+        cursor: pointer;
+        margin-top: 2px;
+        width: 97.5%;
+    }
+    .small .option:hover{
+        background: #333;
+    }
+    .small .option h1 in{
+        display: inline;
+        font-size: large;
+        font-family: Para;
+    }
+    .name{
+        height: auto;
+    }
+    .suggestions{
+        display: none;
+        padding-right: 10px;
+    }
+    .suggestions .suggest{
+        font-size: x-small;
+    }
+    .nomsg .logo{
+        margin-top: 50%;
+    }
+    #data{
+        margin-top: 55px;
+        height: 100%;
+    }
+}

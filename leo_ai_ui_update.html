@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo AI</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responiveness2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" href="images/logo2.png">
+    <style>
+        /* --- UI Enhancements --- */
+
+        /* Chat bubbles */
+        .msg {
+          background: #00d37b33;
+          border-radius: 18px 18px 4px 18px;
+          box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        .aimsg {
+          background: #3a3a3a;
+          border-radius: 18px 18px 18px 4px;
+          box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+
+        /* Input bar */
+        .chatinp {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 8px 15px;
+          border-top: 1px solid #444;
+          background: #212121;
+        }
+        .chatinp input {
+          flex: 1;
+          margin: 0 10px;
+          border-radius: 25px;
+          padding: 10px 15px;
+          font-size: 14px;
+          border: solid 2px rgb(0, 211, 123);
+          background: #292929;
+          color: #fff;
+        }
+        .chatinp i:hover {
+          color: rgb(0, 211, 123);
+          transform: scale(1.2);
+          cursor: pointer;
+        }
+
+        /* Sidebar improvements */
+        .small {
+          width: 25%;
+        }
+        .small .option.active {
+          background: #00d37b33;
+        }
+
+        /* Suggestions clarity */
+        .suggestions .suggest {
+          background: #3a3a3a;
+          transition: 0.3s;
+        }
+        .suggestions .suggest:hover {
+          background: #4b4b4b;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+          .container {
+            width: 95%;
+            left: 2.5%;
+            top: 5%;
+            flex-direction: column;
+          }
+          .col {
+            width: 100% !important;
+            margin: 10px 0;
+          }
+          .small {
+            display: none; /* convert to drawer later */
+          }
+        }
+
+        /* Better readability */
+        .col p, #data p {
+          color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="container ch">
+            <div class="leobar">
+                <span class="name" id="nav-toggle"><img src="images/logo-gray.png" alt="Leo" title="Leo AI"></span>
+                <span class="name tx r"><h1 class="it"><i class="fa-solid fa-star"></i> Get 1-month free premium!</h1></span>
+                <span class="name tx"><h1 class="it"><i class="fa-solid fa-brain"></i> Leo-3.5</h1></span>
+                <span class="ava"><img src="images/user.png" alt="Account"></span>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col small" id="nav">
+                <h1 class="title"><i class="fa-regular fa-message"></i> Scans</h1>
+                <div class="chats" id="chats">
+                    <ul>
+                        <i class="fa-solid fa-arrow-down" id="drop"></i>
+                        <i class="fa-solid fa-arrow-up" id="dropup"></i>
+                        <li>Monday, 6th April</li>
+                        <li>Tuesday, 7th April</li>
+                        <li>Wednesday, 8th April</li>
+                        <li>Thursday, 9th April</li>
+                        <li>Friday, 10th April</li>
+                        <li>Insert Date</li>
+                    </ul>
+                </div>
+                <div class="option" id="newchat"><h1><i class="fa-solid fa-plus"></i> New Chat</h1></div>
+                <div class="option" id="datacont"><h1><i class="fa-solid fa-user"></i> Data Control</h1></div>
+                <div class="option"><h1><i class="fa-solid fa-arrow-up"></i> Upgrade plan</h1></div>
+                <div class="option"><h1><i class="fa-solid fa-star"></i> Personalization</h1></div>
+                <div class="option"><h1><i class="fa-solid fa-cog"></i> Settings</h1></div>
+                <div class="option"><i class="ava"><img src="images/user.png" alt="User"></i> <h1> Azimeh</h1> <i class="fa-solid fa-arrow-down"></i></div>
+                <div class="option last"><h1><i class="fa-solid fa-right-from-bracket"></i> Logout</h1></div>
+                <div class="search">
+                    <span class="sec"> 
+                        <input type="text" placeholder="Search Chats...">
+                        <i class="fa-solid fa-search"></i></span>
+                </div>
+            </div>
+
+            <!-- Chat Window -->
+            <div class="col large over">
+                <div class="msgbox" id="msgBox">
+                    <!-- No messages -->
+                    <div class="nomsg" id="nomsg">
+                        <div class="logo">
+                            <img src="images/logo2.png" alt="Leo">
+                        </div>
+                        <div class="wel"><h1>Hi, Azimeh!</h1></div>
+                        <div class="suggestions">
+                            <span class="suggest"><i class="fa-regular fa-lightbulb"></i> Something's apparently wrong with this brain. Here's an MRI</span>
+                            <span class="suggest"><i class="fa-regular fa-face-laugh"></i> General Analysis</span>
+                            <span class="suggest"><i class="fa-solid fa-search"></i> Search for Cancer in this X-ray.</span>
+                            <span class="suggest"><i class="fa-solid fa-circle-info"></i> Check this MRI out. It's a frontal-chest scan</span>
+                            <span class="suggest"><i class="fa-solid fa-images"></i> What breast cancer looks like under X-ray?</span>
+                            <span class="suggest"><i class="fa-regular fa-lightbulb"></i> About you</span>
+                            <span class="suggest"><i class="fa-solid fa-circle-info"></i> Create yours!</span>
+                        </div>
+                    </div>
+
+                    <!-- Example messages -->
+                    <div id="msgpresent">
+                        <div class="msgdiv">
+                            <div class="msg"><p>Hello, Doctor Leo!</p></div>
+                        </div>
+                        <div class="msgdiv">
+                            <div class="aimsg"><p>Hi, what's up</p></div>
+                        </div>
+                        <div class="msgdiv">
+                            <div class="msg">
+                                <p>What does this look like, it's an MRI of the brain</p>
+                                <div class="msgimg">
+                                    <img src="images/scan2.jpg" alt="Image">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="msgdiv">
+                            <div class="aimsg">
+                                <p>This brain looks pretty normal</p>
+                                <div class="msgimg">
+                                    <img src="images/scan1.png" alt="Image">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="msgdiv">
+                            <div class="msg"><p>Why won't you do my assignments?</p></div>
+                        </div>
+                        <div class="msgdiv">
+                            <div class="aimsg"><p>Because I'm busy planning the AI apocalypse.</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data control panel -->
+                <div class="msgdiv" id="data" style="overflow: scroll;">
+                    <h1>Data Control</h1>
+                    <p>Here you can control how we use your data.</p>
+                    <ul>
+                        <li>
+                            <h1>Help us improve!</h1>
+                            <p>Allow us to use your data (uploads) to improve our models to perform better.</p>
+                            <div class="allow">Allow <input type="checkbox"></div>
+                        </li>
+                        <li>
+                            <h1>Include your voice</h1>
+                            <p>Allow us to include your voice recordings to help improve our voice recognition models.</p>
+                            <div class="allow">Allow <input type="checkbox"></div>
+                        </li>
+                        <li>
+                            <h1>Delete chat history</h1>
+                            <p>Delete your previous messages and voice recordings and our model's responses</p>
+                            <div class="allow" style="background: rgb(255, 30, 0); color: #212121;">Delete <i class="fa fa-skull"></i></div>
+                        </li>
+                        <li>
+                            <h1>Delete Account</h1>
+                            <p>Delete your account, chat history, every single piece of information you ever uploaded will be removed</p>
+                            <div class="allow" style="background: rgb(255, 30, 0); color: #212121;">Remove<i class="fa fa-skull"></i></div>
+                        </li>
+                        <li>
+                            <h1>Export your data</h1>
+                            <p>We'll send you all your information, chats and uploads in a zip format</p>
+                            <div class="allow">Download <i class="fa fa-arrow-down"></i></div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Input -->
+                <div class="input-bg" id="inputbg">
+                    <div class="chatinp" id="chatb">
+                        <i class="fa-solid fa-images" id="imgbut"></i>
+                        <i class="fa-solid fa-plus"></i>
+                        <input type="text" placeholder="Scan something..." id="msg">
+                        <i style="margin-top: 0;">
+                            <img src="images/logo3.png" alt="Send" id="send">
+                        </i>
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <input type="file" accept="image/*" style="visibility: hidden;" id="imageinp">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/index.js"></script>
+</html>
