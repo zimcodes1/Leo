@@ -19,7 +19,10 @@
     font-family: Mont;
     src: url(../fonts/Mont-HeavyDEMO.otf);
 }
-
+@font-face {
+    font-family: Object;
+    src: url(../fonts/Ubuntu-Regular.ttf);
+}
 @keyframes rotate {
     0%{
         transform: rotate(0deg);
